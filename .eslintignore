@@ -1,0 +1,12 @@
+node_modules/*
+dist/*
+public/*
+tests/*
+package.json
+yarn.lock
+.prettierrc
+tsconfig.json
+tsconfig.node.json
+vite.config.ts
+vitest.config.ts
+**/*.md

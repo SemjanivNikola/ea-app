@@ -1,25 +1,41 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
-    "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
-    "skipLibCheck": true,
+    "target": "ESNext",
+    "lib": [
+      "ES2020",
+      "DOM",
+      "DOM.Iterable"
+    ],
 
     /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx",
+    "jsx": "react-jsx", /* Preferable way of JSX transformation to JS */
+    "allowJs": false, /* Allow JavaScript files to be a part of your program. Use the 'checkJS' option to get errors from these files. */
+    "types": [
+      "vite/client"
+    ],
+    "baseUrl": ".", /* Let you set a base directory to resolve non-absolute module names - allow using aliases */
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+    },
 
     /* Linting */
-    "strict": true,
+    "strict": true, /* The strict flag enables a wide range of type checking behavior that results in stronger guarantees of program correctness. Turning this on is equivalent to enabling all of the strict mode family options */
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "allowSyntheticDefaultImports": true, /* Allow default imports */
+    "forceConsistentCasingInFileNames": true, /* Ensure case sensitivity rule so it won't come to conflict between case sensitive and case insensitive file systems */
   },
-  "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "exclude": [
+    "node_modules",
+    "vite.config.js"
+  ],
+  "include": [
+    ".eslintrc.js",
+    "src/**/*",
+  ],
 }
