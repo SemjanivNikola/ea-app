@@ -6,6 +6,12 @@
       "DOM",
       "DOM.Iterable"
     ],
+    "composite": true,
+    "skipLibCheck": true, /* Skip type checking of declaration files. (.d.ts) */
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
 
     /* Bundler mode */
     "isolatedModules": true,
