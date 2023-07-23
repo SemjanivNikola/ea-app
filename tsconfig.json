@@ -11,8 +11,7 @@
     "module": "ESNext",
     "moduleResolution": "Node",
     "resolveJsonModule": true,
-    "allowSyntheticDefaultImports": true,
-
+    "allowSyntheticDefaultImports": true, /* Allow default imports */
     /* Bundler mode */
     "isolatedModules": true,
     "noEmit": true,
@@ -27,13 +26,11 @@
         "src/*"
       ],
     },
-
     /* Linting */
     "strict": true, /* The strict flag enables a wide range of type checking behavior that results in stronger guarantees of program correctness. Turning this on is equivalent to enabling all of the strict mode family options */
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "allowSyntheticDefaultImports": true, /* Allow default imports */
     "forceConsistentCasingInFileNames": true, /* Ensure case sensitivity rule so it won't come to conflict between case sensitive and case insensitive file systems */
   },
   "exclude": [
@@ -41,7 +38,7 @@
     "vite.config.js"
   ],
   "include": [
-    ".eslintrc.js",
+    ".eslintrc.cjs",
     "src/**/*",
   ],
 }

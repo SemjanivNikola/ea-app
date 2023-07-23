@@ -1,13 +1,31 @@
 module.exports = {
   root: true,
-  env: { browser: true, es2020: true },
+  parser: "@typescript-eslint/parser",
+  parserOptions: {
+    ecmaFeatures: { jsx: true },
+    extraFileExtensions: [".json"],
+    project: "./tsconfig.json",
+    sourceType: "module", // Allows for the use of imports
+    useJSXTextNode: false
+  },
+  settings: {
+    react: {
+      version: 'detect',
+    },
+    env: {
+      browser: true,
+      es2021: true
+    },
+  },
   extends: [
     'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/recommended-type-checked',
+    'plugin:@typescript-eslint/stylistic-type-checked',
+    'plugin:react/recommended',
+    'plugin:react/jsx-runtime',
     'plugin:react-hooks/recommended',
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
   ],
-  parser: '@typescript-eslint/parser',
   plugins: ['react-refresh', "@typescript-eslint", "prettier", "react", "react-hooks"],
   rules: {
     'react-refresh/only-export-components': [
