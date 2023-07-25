@@ -1,0 +1,58 @@
+.screen {
+    background-color: var(--white);
+}
+
+section#doc-list {
+    max-width: 36%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#doc-list div:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 85%;
+    height: 1px;
+    background-color: var(--black-inverse);
+}
+
+#item-header {
+    width: 22%;
+    height: 100%;
+}
+
+.doc-cover {
+    height: inherit;
+    background-color: var(--black-inverse);
+    font-size: var(--font-2xl);
+}
+
+#item-summary {
+    width: 70%;
+    text-align: start;
+}
+
+#item-summary .date {
+    font-size: var(--font-m);
+    color: var(--primary-tint);
+}
+
+#item-summary .title p {
+    font-weight: 600;
+    -webkit-line-clamp: 2 !important;
+}
+
+#item-summary .title p,
+#item-summary .description p {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+
+    margin: 0;
+    overflow: hidden;
+}
+
+#item-summary .description {
+}
