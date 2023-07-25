@@ -28,7 +28,8 @@
     --white: #fff;
     --black: #1c1c1e;
     --black-inverse: #e3e3e1;
-    --gray: #ccc;
+    --gray: #cccccc;
+    --gray-tone: rgba(204, 204, 204, 0.25);
 
     /* Split-Complementary Palette */
     --primary: #71bc68; /* invert color #8e4397 */
@@ -153,7 +154,7 @@ h1 {
 
 /* Scroll buttons */
 ::-webkit-scrollbar-button:single-button {
-    background-color: var(--black-inverse);
+    background-color: var(--gray-tone);
     background-repeat: no-repeat;
     background-size: 0.5rem;
     background-position: 40%;
@@ -173,12 +174,12 @@ h1 {
 }
 
 ::-webkit-scrollbar-button:hover {
-    background-color: var(--gray);
+    background-color: var(--gray-tone);
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background-color: var(--black-inverse);
+    background-color: var(--gray-tone);
 }
 
 /* Handle */
