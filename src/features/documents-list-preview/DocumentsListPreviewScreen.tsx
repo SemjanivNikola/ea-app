@@ -1,3 +1,4 @@
+import Icon from "@/common/Icons";
 import DocumentList from "./list/DocumentList";
 import "./style.css";
 
@@ -44,8 +45,12 @@ const DocumentListPreviewScreen = () => {
     return (
         <div className="flex screen">
             <DocumentList list={LIST} />
-            <div id="section-divider-vertical" />
-            <section id="preview" className="grow shrink-1">
+            <div id="section-divider-vertical">
+                <button className="btn-icon">
+                    <Icon name="chevron-right" size={32} />
+                </button>
+            </div>
+            <section id="preview" className="grow shrink-1" style={{ marginTop: 94 }}>
                 <p>Document preview text</p>
             </section>
         </div>
