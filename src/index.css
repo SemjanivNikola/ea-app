@@ -6,19 +6,14 @@
 :root {
     /* Font Family */
     --playfair: "Playfair-Regular", serif; /* used for titles */
-    font-family: Roboto, sans-serif; /* used for ordinary text */
-    line-height: 1.5;
-    font-weight: 400;
 
-    color-scheme: light dark;
-    color: rgba(255, 255, 255, 0.87);
-    background-color: #242424;
-
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-text-size-adjust: 100%;
+    /* Font size */
+    --font-xs: 0.75rem; /* 12px */
+    --font-s: 0.875rem; /* 14px */
+    --font-m: 1rem; /* 16px */
+    --font-lg: 1.25rem; /* 20px */
+    --font-xl: 2.125rem; /* 32px */
+    --font-2xl: 3.25rem; /* 52px */
 
     /* Spacing */
     --xs: 4px;
@@ -40,57 +35,40 @@
     --secondary: #8968bc;
     --tertiary: #bc689b; /* or #B368BC*/
 
+    --primary-tint: rgba(122, 152, 118, 0.85);
+
     /* Analogous Palette */
-    /* --primary: #71BC68;
-  --secondary: #68BC89;
-  --tertiary: #9BBC68; */
-}
+    /* --primary: #71BC68; */
+    /* --secondary: #68BC89; */
+    /* --tertiary: #9BBC68; */
 
-#list-item p {
-    margin-top: var(--3xl);
-    font-size: 54px;
-    font-family: var(--playfair);
-}
+    /* Default values */
+    font-family: Roboto, sans-serif; /* used for ordinary text */
+    font-size: var(--font-m);
+    line-height: 1.1;
+    font-weight: 400;
 
-a {
-    font-weight: 500;
-    color: #646cff;
-    text-decoration: inherit;
-}
-a:hover {
-    color: #535bf2;
+    color-scheme: light dark;
+    color: var(--black);
+    background-color: var(--white);
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
 }
 
 body {
     margin: 0;
-    display: flex;
-    place-items: center;
-    min-width: 320px;
-    min-height: 100vh;
+    height: 100vh;
+    overflow: hidden;
+    background-color: var(--secondary);
 }
 
 h1 {
     font-size: 3.2em;
     line-height: 1.1;
-}
-
-button {
-    border-radius: 8px;
-    border: 1px solid transparent;
-    padding: 0.6em 1.2em;
-    font-size: 1em;
-    font-weight: 500;
-    font-family: inherit;
-    background-color: #1a1a1a;
-    cursor: pointer;
-    transition: border-color 0.25s;
-}
-button:hover {
-    border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
 }
 
 @media (prefers-color-scheme: light) {
@@ -104,4 +82,66 @@ button:focus-visible {
     button {
         background-color: #f9f9f9;
     }
+}
+
+/* ================================ */
+/*            POSITION              */
+/* ================================ */
+.relative {
+    position: relative;
+}
+
+/* ================================ */
+/*             FLEX              */
+/* ================================ */
+.flex {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex.col {
+    flex-direction: column;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.gap-s {
+    gap: var(--s);
+}
+
+.grow {
+    flex-grow: 1;
+}
+
+.grow-0 {
+    flex-grow: 0;
+}
+
+.shrink {
+    flex-shrink: 1;
+}
+
+.shrink-0 {
+    flex-shrink: 0;
+}
+
+/* ================================ */
+/*             PADDING              */
+/* ================================ */
+.py-s {
+    padding: var(--s) 0;
+}
+
+.py-m {
+    padding: var(--m) 0;
+}
+
+.px-s {
+    padding: 0 var(--s);
 }
