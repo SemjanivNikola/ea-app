@@ -1,6 +1,7 @@
 import Icon from "@/common/Icons";
 import DocumentList from "./list/DocumentList";
 import "./style.css";
+import FloatActionButton from "./FAB";
 
 const LIST = [
     {
@@ -53,6 +54,7 @@ const DocumentListPreviewScreen = () => {
             <section id="preview" className="grow shrink-1" style={{ marginTop: 94 }}>
                 <p>Document preview text</p>
             </section>
+            <FloatActionButton />
         </div>
     );
 };
