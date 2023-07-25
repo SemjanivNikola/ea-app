@@ -17,10 +17,10 @@
 
     /* Spacing */
     --xs: 4px;
-    --s: 0.5rem;
-    --m: 1rem;
-    --lg: 1.5rem;
-    --xl: 2rem;
+    --s: 0.5rem; /* 8px */
+    --m: 1rem; /* 16px */
+    --lg: 1.5rem; /* 24px */
+    --xl: 2rem; /* 32px */
     --2xl: 3rem; /* 48px */
     --3xl: 5rem; /* 80px */
 
@@ -147,6 +147,9 @@ h1 {
     padding: 0 var(--s);
 }
 
+/* ================================ */
+/*            SCROLLBAR             */
+/* ================================ */
 /* Seting custom width make bar customizable */
 ::-webkit-scrollbar {
     width: 0.8rem;
