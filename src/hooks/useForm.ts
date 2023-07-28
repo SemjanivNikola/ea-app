@@ -9,7 +9,9 @@ import {
     SubmitForm
 } from "@/types/FormProps";
 
-export function useForm<T extends Record<string, string | number | boolean | null>>(initialValues: T): FormProps<T> {
+export function useForm<T extends Record<string, string | number | boolean | undefined>>(
+    initialValues: T
+): FormProps<T> {
     const data: DataObject<T> = initialValues;
     const errors: ErrorsObject<T> = {} as ErrorsObject<T>;
 

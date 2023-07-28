@@ -1,5 +1,5 @@
 export type IDocumentForm = {
     title: string;
-    description: string | null;
+    description?: string | undefined;
     draft: string;
 };
