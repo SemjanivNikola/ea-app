@@ -7,7 +7,7 @@ export interface TextInputProps {
     isFocused?: boolean;
     error?: string;
     label: string;
-    value?: string | number;
+    value: string | number | boolean | null;
     readOnly?: InputHTMLAttributes<HTMLInputElement>["readOnly"];
     required?: InputHTMLAttributes<HTMLInputElement>["required"];
     onChange: (e: any) => void;
