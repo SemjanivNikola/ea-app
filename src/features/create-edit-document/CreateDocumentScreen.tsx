@@ -4,7 +4,7 @@ import AudioVisualizer from "./AudioVisualizer";
 
 const initialValues: IDocumentForm = {
     title: "",
-    description: null,
+    description: "",
     draft: ""
 };
 
