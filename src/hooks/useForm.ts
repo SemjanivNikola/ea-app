@@ -8,15 +8,17 @@ import {
     SetError,
     SubmitForm
 } from "@/types/FormProps";
+import { InputHTMLAttributes, useState } from "react";
 
-export function useForm<T extends Record<string, string | number | boolean | undefined>>(
+export function useForm<T extends Record<string, InputHTMLAttributes<HTMLInputElement>["value"]>>(
     initialValues: T
 ): FormProps<T> {
-    const data: DataObject<T> = initialValues;
+    const [data, setData] = useState<DataObject<T>>(initialValues);
     const errors: ErrorsObject<T> = {} as ErrorsObject<T>;
 
-    const setData: SetData<T, keyof T> = (name, value) => {
-        data[name] = value;
+    const handleOnChange: SetData<T, keyof T> = (name, value) => {
+        const c = { [name]: value };
+        setData({ ...data, ...c });
     };
 
     const __setError: SetError<T, keyof T> = (name, value) => {
@@ -34,7 +36,7 @@ export function useForm<T extends Record<string, string | number | boolean | und
             value: data[name],
             type: type,
             onChange: ({ target }) => {
-                setData(target.name, target.value);
+                handleOnChange(target.name, target.value);
             },
             error: errors[name]
         };
@@ -46,7 +48,7 @@ export function useForm<T extends Record<string, string | number | boolean | und
 
     return {
         data,
-        setData,
+        setData: handleOnChange,
         errors,
         register,
         submitForm
