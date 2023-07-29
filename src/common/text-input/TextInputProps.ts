@@ -1,4 +1,4 @@
-import { InputHTMLAttributes, ReactNode } from "react";
+import { InputHTMLAttributes, ReactNode, TextareaHTMLAttributes } from "react";
 
 interface TextInputProps {
     type: InputHTMLAttributes<HTMLInputElement>["type"];
@@ -12,6 +12,10 @@ interface TextInputProps {
     required?: InputHTMLAttributes<HTMLInputElement>["required"];
     onChange: (e: any) => void;
 }
+
+export type TextAreaInputProps = {
+    rows?: TextareaHTMLAttributes<HTMLTextAreaElement>["rows"];
+} & TextInputProps;
 
 export interface DatePickerProps {
     name: string;

@@ -12,7 +12,9 @@ input {
 }
 
 input:focus + .input_label,
-input:not([value=""]) + .input_label {
+input:not([value=""]) + .input_label,
+textarea:focus + .input_label,
+textarea:not([value=""]) + .input_label {
     top: 0;
     font-size: var(--font-s);
 }
@@ -29,4 +31,17 @@ input:not([value=""]) + .input_label {
     font-size: var(--font-xs);
     font-weight: 500;
     color: rgb(239 68 68);
+}
+
+textarea {
+    width: 100%;
+    outline: none;
+    border: none;
+    font-size: var(--font-m);
+    border-bottom: 2px solid var(--gray);
+    appearance: none;
+    background-color: var(--white);
+    color: var(--black);
+    padding-top: var(--s);
+    resize: none;
 }
