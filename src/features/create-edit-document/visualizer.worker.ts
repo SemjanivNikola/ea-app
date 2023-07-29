@@ -17,9 +17,9 @@ const drawVisualizer = ({ dataArray }: DrawVisualizerProps) => {
         const meterNum = cwidth / (meterWidth + gap);
         const ctx = canvas.getContext("2d")!;
         const gradient = ctx.createLinearGradient(0, 0, 0, cheight);
-        gradient.addColorStop(1, "#a467af");
-        gradient.addColorStop(0.3, "#ff0");
-        gradient.addColorStop(0, "#f00");
+        gradient.addColorStop(1, "#8968bc");
+        gradient.addColorStop(0.7, "#71bc68");
+        gradient.addColorStop(0, "#bc689b");
         ctx.fillStyle = gradient;
 
         const draw = () => {
