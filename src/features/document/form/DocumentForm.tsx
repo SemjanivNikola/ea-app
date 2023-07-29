@@ -1,6 +1,7 @@
 import TextInput from "@/common/text-input/TextInput";
 import { useForm } from "@/hooks/useForm";
 import { IDocumentForm } from "./DocumentFormProps";
+import TextAreaInput from "@/common/text-input/TextAreaInput";
 
 const DocumentForm = ({ initialValues }: { initialValues: IDocumentForm }) => {
     const { register } = useForm<IDocumentForm>(initialValues);
@@ -10,7 +11,7 @@ const DocumentForm = ({ initialValues }: { initialValues: IDocumentForm }) => {
             <form action="document" method="post">
                 <TextInput label="Title*" {...register("title")} />
                 <TextInput label="Description" {...register("description")} />
-                <TextInput label="Draft" {...register("draft")} />
+                <TextAreaInput label="Draft" {...register("draft")} />
             </form>
         </div>
     );
