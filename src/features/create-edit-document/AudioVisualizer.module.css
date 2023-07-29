@@ -1,0 +1,10 @@
+.wrap {
+    margin: 20px auto 0 auto;
+    background-color: var(--white);
+    border-radius: var(--s);
+}
+#canvas {
+    display: block;
+
+    border-bottom: 2px solid #9c27b0;
+}

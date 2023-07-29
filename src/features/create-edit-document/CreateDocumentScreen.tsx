@@ -1,5 +1,6 @@
 import DocumentForm from "../document/form/DocumentForm";
 import { IDocumentForm } from "../document/form/DocumentFormProps";
+import AudioVisualizer from "./AudioVisualizer";
 
 const initialValues: IDocumentForm = {
     title: "",
@@ -11,6 +12,7 @@ const CreateDocumentScreen = () => {
     return (
         <div>
             <DocumentForm initialValues={initialValues} />
+            <AudioVisualizer />
         </div>
     );
 };
