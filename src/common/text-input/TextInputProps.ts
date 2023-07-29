@@ -1,13 +1,13 @@
 import { InputHTMLAttributes, ReactNode } from "react";
 
-export interface TextInputProps {
+interface TextInputProps {
     type: InputHTMLAttributes<HTMLInputElement>["type"];
     name: string;
     autoComplete?: InputHTMLAttributes<HTMLInputElement>["autoComplete"];
     isFocused?: boolean;
     error?: string;
     label: string;
-    value?: string | number | boolean | undefined;
+    value?: InputHTMLAttributes<HTMLInputElement>["value"];
     readOnly?: InputHTMLAttributes<HTMLInputElement>["readOnly"];
     required?: InputHTMLAttributes<HTMLInputElement>["required"];
     onChange: (e: any) => void;
