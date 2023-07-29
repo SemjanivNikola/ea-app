@@ -81,6 +81,8 @@ module.exports = {
         "react/void-dom-elements-no-children": "error", // Prevent void DOM elements (e.g. <img />, <br />) from receiving children
         "react/prop-types": 0,
 
+        "react-hooks/exhaustive-deps": 0,
+
         "react/jsx-boolean-value": ["error", "never"], // Enforce boolean attributes notation in JSX (fixable)
         "react/jsx-child-element-spacing": "error", // Enforce or disallow spaces inside of curly braces in JSX attributes and expressions.
         "react/jsx-closing-bracket-location": "error", // Validate closing bracket location in JSX (fixable)
