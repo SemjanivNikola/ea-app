@@ -1,12 +1,8 @@
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { useEffect, useMemo } from "react";
 import style from "./AudioVisualizer.module.css";
 
 const AudioVisualizerCopy = () => {
-    const worker: Worker = useMemo(() => new Worker(new URL("./worker.ts", import.meta.url)), []);
+    const worker: Worker = useMemo(() => new Worker(new URL("./visualizer.worker.ts", import.meta.url)), []);
 
     const drawSpectrum = function (analyser: AnalyserNode) {
         const canvas = document.querySelector("canvas")?.transferControlToOffscreen();
@@ -52,20 +48,23 @@ const AudioVisualizerCopy = () => {
                 drawSpectrum(analyser);
             })
             .catch((error: Error) => {
-                console.log("Something failed >> ", error.message);
+                // eslint-disable-next-line no-console
+                console.error("Something failed >> ", error.message);
             });
     }, []);
 
-    // if (!navigator.mediaDevices.getUserMedia) {
-    //     tip.innerHTML = "your browser does not have mediastream support";
-    // }
-
     return (
         <>
-            <audio id="microphone" autoPlay />
-            <div className={style.wrap}>
-                <canvas id="canvas" width="1000" height="350" />
-            </div>
+            {!navigator.mediaDevices.getUserMedia ? (
+                <p>Your browser does not have mediastream support</p>
+            ) : (
+                <>
+                    <audio id="microphone" autoPlay />
+                    <div className={style.wrap}>
+                        <canvas id="canvas" width="1000" height="350" />
+                    </div>
+                </>
+            )}
         </>
     );
 };
